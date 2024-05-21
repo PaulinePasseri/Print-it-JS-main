@@ -1,25 +1,13 @@
-const slides = [
-	{
-		"image":"slide1.jpg",
-		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
-	},
-	{
-		"image":"slide2.jpg",
-		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
-	},
-	{
-		"image":"slide3.jpg",
-		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
-	},
-	{
-		"image":"slide4.png",
-		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
-	}
-]
+const images = [
+	"./assets/images/slideshow/slide1.jpg", 
+	"./assets/images/slideshow/slide2.jpg", 
+	"./assets/images/slideshow/slide3.jpg", 
+	"./assets/images/slideshow/slide4.png"]
 
-const images = ["./assets/images/slideshow/slide1.jpg", "./assets/images/slideshow/slide2.jpg", "./assets/images/slideshow/slide3.jpg", "./assets/images/slideshow/slide4.png"]
-
-const taglines = ["Impressions tous formats <span>en boutique et en ligne</span>", "Tirages haute définition grand format <span>pour vos bureaux et events</span>", "Grand choix de couleurs <span>de CMJN aux pantones</span>","Autocollants <span>avec découpe laser sur mesure</span>"]
+const taglines = [
+	"Impressions tous formats <span>en boutique et en ligne</span>", 
+	"Tirages haute définition grand format <span>pour vos bureaux et events</span>", "Grand choix de couleurs <span>de CMJN aux pantones</span>",
+	"Autocollants <span>avec découpe laser sur mesure</span>"]
 
 
 // Ajout des Bullet Points
@@ -63,12 +51,18 @@ function ChangeSlide() {
 	let arrowLeft = document.querySelector(".arrow_left")
 	arrowLeft.addEventListener("click", () => {
 		j--
+		if (j < 0) {
+			j = images.length - 1
+		}
 		newSlide(j)
 	})
 
 	let arrowRight = document.querySelector(".arrow_right")
 	arrowRight.addEventListener("click", () => {
 		j++
+		if (j >= images.length) {
+			j = 0
+		}
 		newSlide(j)
 	})
 }
