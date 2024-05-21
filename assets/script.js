@@ -38,14 +38,14 @@ function changeBulletPoint(activeBullet) {
 
 
 // Changement d'image active
-let imageActive = document.querySelector(".banner-img")
 function changeImage(image) {
+	let imageActive = document.querySelector(".banner-img")
 	imageActive.src = images[image]
 }
 
 // Changement de tagline active
-let taglineActive = document.querySelector("#banner p")
 function changeTagline(tagline) {
+	let taglineActive = document.querySelector("#banner p")
 	taglineActive.innerHTML = taglines[tagline]
 }
 
