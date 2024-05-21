@@ -17,19 +17,9 @@ const slides = [
 	}
 ]
 
-const image1 = "./assets/images/slideshow/slide1.jpg"
-const image2 = "./assets/images/slideshow/slide2.jpg"
-const image3 = "./assets/images/slideshow/slide3.jpg"
-const image4 = "./assets/images/slideshow/slide4.png"
+const images = ["./assets/images/slideshow/slide1.jpg", "./assets/images/slideshow/slide2.jpg", "./assets/images/slideshow/slide3.jpg", "./assets/images/slideshow/slide4.png"]
 
-const images = [image1, image2, image3, image4]
-
-const tagline1 = "Impressions tous formats <span>en boutique et en ligne</span>"
-const tagline2 = "Tirages haute définition grand format <span>pour vos bureaux et events</span>"
-const tagline3 = "Grand choix de couleurs <span>de CMJN aux pantones</span>"
-const tagline4 = "Autocollants <span>avec découpe laser sur mesure</span>"
-
-const taglines = [tagline1, tagline2, tagline3, tagline4]
+const taglines = ["Impressions tous formats <span>en boutique et en ligne</span>", "Tirages haute définition grand format <span>pour vos bureaux et events</span>", "Grand choix de couleurs <span>de CMJN aux pantones</span>","Autocollants <span>avec découpe laser sur mesure</span>"]
 
 
 // Ajout des Bullet Points
