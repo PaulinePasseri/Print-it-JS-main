@@ -1,20 +1,27 @@
-const images = [
-	"./assets/images/slideshow/slide1.jpg", 
-	"./assets/images/slideshow/slide2.jpg", 
-	"./assets/images/slideshow/slide3.jpg", 
-	"./assets/images/slideshow/slide4.png"]
-
-const taglines = [
-	"Impressions tous formats <span>en boutique et en ligne</span>", 
-	"Tirages haute définition grand format <span>pour vos bureaux et events</span>", "Grand choix de couleurs <span>de CMJN aux pantones</span>",
-	"Autocollants <span>avec découpe laser sur mesure</span>"]
-
+const slides = [
+	{
+		"image":"assets/images/slideshow/slide1.jpg",
+		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
+	},
+	{
+		"image":"assets/images/slideshow/slide2.jpg",
+		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
+	},
+	{
+		"image":"assets/images/slideshow/slide3.jpg",
+		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
+	},
+	{
+		"image":"assets/images/slideshow/slide4.png",
+		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
+	}
+]
 
 // Ajout des Bullet Points
 function changeBulletPoint(activeBullet) {
 	let dotList = document.querySelector(".dots")
 	dotList.innerHTML = ""
-	for (let i=0; i < images.length; i++) {
+	for (let i=0; i < slides.length; i++) {
 		let dot = document.createElement("span")
 		dot.classList.add("dot")
 		if (i === activeBullet) {
@@ -28,13 +35,13 @@ function changeBulletPoint(activeBullet) {
 // Changement d'image active
 function changeImage(image) {
 	let imageActive = document.querySelector(".banner-img")
-	imageActive.src = images[image]
+	imageActive.src = slides[image].image
 }
 
 // Changement de tagline active
 function changeTagline(tagline) {
 	let taglineActive = document.querySelector("#banner p")
-	taglineActive.innerHTML = taglines[tagline]
+	taglineActive.innerHTML = slides[tagline].tagLine
 }
 
 // Mise à jour de la slide
@@ -52,7 +59,7 @@ function ChangeSlide() {
 	arrowLeft.addEventListener("click", () => {
 		j--
 		if (j < 0) {
-			j = images.length - 1
+			j = slides.length - 1
 		}
 		newSlide(j)
 	})
@@ -60,7 +67,7 @@ function ChangeSlide() {
 	let arrowRight = document.querySelector(".arrow_right")
 	arrowRight.addEventListener("click", () => {
 		j++
-		if (j >= images.length) {
+		if (j >= slides.length) {
 			j = 0
 		}
 		newSlide(j)
