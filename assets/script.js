@@ -1,3 +1,9 @@
+let imageActive = document.querySelector(".banner-img")
+let taglineActive = document.querySelector("#banner p")
+let arrowLeft = document.querySelector(".arrow_left")
+let arrowRight = document.querySelector(".arrow_right")
+let currentSlide = 0
+
 const slides = [
 	{
 		"image":"assets/images/slideshow/slide1.jpg",
@@ -17,6 +23,24 @@ const slides = [
 	}
 ]
 
+// Event Listener
+arrowLeft.addEventListener("click", () => {
+	currentSlide--
+	if (currentSlide < 0) {
+		currentSlide = slides.length - 1
+	}
+	newSlide(currentSlide)
+})
+
+
+arrowRight.addEventListener("click", () => {
+	currentSlide++
+	if (currentSlide >= slides.length) {
+		currentSlide = 0
+	}
+	newSlide(currentSlide)
+})
+
 // Ajout des Bullet Points
 function changeBulletPoint(activeBullet) {
 	let dotList = document.querySelector(".dots")
@@ -34,13 +58,11 @@ function changeBulletPoint(activeBullet) {
 
 // Changement d'image active
 function changeImage(image) {
-	let imageActive = document.querySelector(".banner-img")
 	imageActive.src = slides[image].image
 }
 
 // Changement de tagline active
 function changeTagline(tagline) {
-	let taglineActive = document.querySelector("#banner p")
 	taglineActive.innerHTML = slides[tagline].tagLine
 }
 
@@ -51,27 +73,6 @@ function newSlide (slide) {
 	changeBulletPoint(slide)
 }
 
-// Evénement sur les flèches 
-function ChangeSlide() {
-	let j = 0
-	changeBulletPoint(j)
-	let arrowLeft = document.querySelector(".arrow_left")
-	arrowLeft.addEventListener("click", () => {
-		j--
-		if (j < 0) {
-			j = slides.length - 1
-		}
-		newSlide(j)
-	})
-
-	let arrowRight = document.querySelector(".arrow_right")
-	arrowRight.addEventListener("click", () => {
-		j++
-		if (j >= slides.length) {
-			j = 0
-		}
-		newSlide(j)
-	})
-}
-
-ChangeSlide()
+// Evénement sur les flèches
+changeBulletPoint(currentSlide) 
+ChangeSlide(currentSlide)
