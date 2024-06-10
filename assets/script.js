@@ -75,4 +75,3 @@ function newSlide (slide) {
 
 // Evénement sur les flèches
 changeBulletPoint(currentSlide) 
-ChangeSlide(currentSlide)
